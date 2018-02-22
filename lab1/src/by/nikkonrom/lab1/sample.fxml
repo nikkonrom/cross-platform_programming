@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.nikkonrom.lab1.Controller">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <AnchorPane>
+         <children>
+            <VBox layoutX="4.099999904632568" layoutY="3.0999999046325684" prefHeight="400.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <StackPane prefHeight="150.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <AnchorPane>
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#adminButtonAction" prefHeight="133.6" prefWidth="300.0" text="Admin" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </StackPane>
+                  <StackPane prefHeight="150.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <AnchorPane>
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="133.6" prefWidth="300.0" text="User" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </StackPane>
+                  <StackPane prefHeight="150.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <AnchorPane>
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="133.6" prefWidth="300.0" text="Guest" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1">
+         <children>
+            <StackPane id="AdminStackPane" prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <CheckBox mnemonicParsing="false" text="CheckBox" StackPane.alignment="TOP_LEFT" />
+               </children>
+            </StackPane>
+            <StackPane id="UserStackPane" prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <Label text="Label" />
+               </children>
+            </StackPane>
+            <StackPane id="GuestStackPane" prefHeight="150.0" prefWidth="200.0" StackPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" text="Button" StackPane.alignment="CENTER" />
+               </children>
+            </StackPane>
+         </children>
+      </StackPane>
+   </children>
+</GridPane>

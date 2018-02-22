@@ -1,4 +1,4 @@
-package sample;
+package by.nikkonrom.lab1;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
