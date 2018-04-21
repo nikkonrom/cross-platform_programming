@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1">
+<GridPane fx:controller="cpp.lab4.mainclient.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
@@ -28,8 +28,8 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" text="Start bot" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Button mnemonicParsing="false" text="Create client" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Button onAction="#OnStartBotButtonClick" mnemonicParsing="false" text="Start bot" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" ></Button>
+            <Button onAction="#OnCreateClientButtonClick" mnemonicParsing="false" text="Create client" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" ></Button>
             <Button mnemonicParsing="false" text="Add request/response pair" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
          </children>
          <padding>
@@ -38,8 +38,8 @@
       </GridPane>
       <GridPane>
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.199951171875" minWidth="10.0" prefWidth="178.39996337890625" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="421.60003662109375" minWidth="10.0" prefWidth="421.60003662109375" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -47,7 +47,7 @@
          <children>
             <TextField GridPane.columnIndex="1">
                <GridPane.margin>
-                  <Insets left="50.0" right="50.0" />
+                  <Insets right="50.0" />
                </GridPane.margin>
             </TextField>
             <Label text="Client request message" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
@@ -55,8 +55,8 @@
       </GridPane>
       <GridPane GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.20001220703125" minWidth="10.0" prefWidth="179.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="447.20001220703125" minWidth="10.0" prefWidth="420.6" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -64,7 +64,7 @@
          <children>
             <TextField GridPane.columnIndex="1">
                <GridPane.margin>
-                  <Insets left="50.0" right="50.0" />
+                  <Insets right="50.0" />
                </GridPane.margin>
             </TextField>
             <Label text="Bot response message" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
