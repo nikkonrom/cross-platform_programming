@@ -11,6 +11,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.MessageBox;
 
 /**
  * Program for checking leap-year.
@@ -37,10 +38,12 @@ public class Main {
     /**
      * Builds GUI.
      */
-    public void build() {
-        Display display = new Display();
+    
 
-        Shell mainShell = new Shell(display);
+    Display display = new Display();
+    Shell mainShell = new Shell(display);
+    
+    public void build() {
         GridLayout layout = new GridLayout();
         layout.numColumns = 2;
         mainShell.setLayout(layout);
@@ -49,6 +52,7 @@ public class Main {
 
         yearLabel = new Label(composite, SWT.PUSH);
         yearLabel.setText("Year ");
+        
         textField = new Text(composite, SWT.BORDER);
         Composite dayInYearLabelComposite = new Composite(mainShell, SWT.LEFT);
         dayInYearLabelComposite.setLayout(new GridLayout());
@@ -88,6 +92,13 @@ public class Main {
             }
         }
         display.dispose();
+    }
+    
+    public int ErrorOccurs() {
+    	MessageBox messageBox = new MessageBox(mainShell, SWT.ICON_WARNING | SWT.ABORT  | SWT.RETRY  | SWT.IGNORE);
+    	messageBox.setMessage(((Text)((Composite)mainShell.getChildren()[0]).getChildren()[1]).getText() + " - Incorrect value");
+    	int a = messageBox.open();
+    	return a;
     }
     
     class ClearButtonSelectionListener implements SelectionListener{
@@ -130,6 +141,10 @@ public class Main {
 
             } catch (NumberFormatException exception) {
                 answerLabel.setText("Leap year: ?");
+                int buttonId = ErrorOccurs();
+                if (buttonId == SWT.ABORT) {
+                	System.exit(0);
+                }
             }
 
         }

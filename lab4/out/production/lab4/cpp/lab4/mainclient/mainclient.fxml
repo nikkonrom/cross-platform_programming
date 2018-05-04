@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane fx:controller="cpp.lab4.mainclient.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cpp.lab4.mainclient.Controller">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
@@ -28,8 +28,8 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button onAction="#OnStartBotButtonClick" mnemonicParsing="false" text="Start bot" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" ></Button>
-            <Button onAction="#OnCreateClientButtonClick" mnemonicParsing="false" text="Create client" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" ></Button>
+            <Button onAction="#OnStartBotButtonClick" mnemonicParsing="false" text="Start bot" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Button onAction="#OnCreateClientButtonClick" mnemonicParsing="false" text="Create client" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
             <Button mnemonicParsing="false" text="Add request/response pair" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
          </children>
          <padding>
