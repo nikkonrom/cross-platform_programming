@@ -38,10 +38,8 @@ public class Main extends Application {
     public static void createClient(){
         Client client = new Client();
         try {
-            client.run();
+            client.run(bot);
         } catch (IOException e) {
             e.printStackTrace();
-        }
-        //clients.add(client);
     }
-}
+}}

@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -17,6 +18,9 @@ public class Client {
     @FXML
     private TextField sendField;
 
+    @FXML
+    private ListView messageView;
+
     private Bot chatBot;
     private BlockingQueue<String> stringQueue;
 
@@ -25,8 +29,13 @@ public class Client {
         chatBot.messageQueue.put(new Message(sendField.getText(), stringQueue));
     }
 
-    private void Pool(){
-
+    private void Poll(){
+        while (true){
+            String message;
+            while ((message = stringQueue.poll()) != null){
+                messageView.getItems().add(message);
+            }
+        }
     }
 
 
@@ -39,7 +48,7 @@ public class Client {
         System.out.println(Thread.currentThread());
         this.chatBot = bot;
         this.stringQueue = new LinkedBlockingQueue<>();
-        Thread pollingThread = new Thread();
-        pollingThread.run();
+        Thread thread = new Thread(this::Poll);
+        thread.start();
     }
 }
