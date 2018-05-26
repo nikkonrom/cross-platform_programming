@@ -48,7 +48,15 @@ public class Client {
         System.out.println(Thread.currentThread());
         this.chatBot = bot;
         this.stringQueue = new LinkedBlockingQueue<>();
-        Thread thread = new Thread(this::Poll);
-        thread.start();
+        Runnable r = ()->{
+            while (true){
+                String message;
+                while ((message = stringQueue.poll()) != null){
+                    messageView.getItems().add(message);
+                }
+            }
+        };
+        Thread pollingThread = new Thread(r,"MyThread");
+        pollingThread.start();
     }
 }
